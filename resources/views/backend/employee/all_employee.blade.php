@@ -12,10 +12,10 @@
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-      {{-- <a href="{{ route('add.employee') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Add Employee </a>   --}}
+      <a href="{{ route('add.employee') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Add Employee </a>  
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">All Employees</h4>
+                                    <h4 class="page-title">All Employee</h4>
                                 </div>
                             </div>
                         </div>     
@@ -52,11 +52,11 @@
                 <td>{{ $item->salary }}</td>
                 <td>
    @if(Auth::user()->can('employee.edit'))                  
-{{-- <a href="{{ route('edit.employee',$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light">Edit</a> --}}
+<a href="{{ route('edit.employee',$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light">Edit</a>
 @endif
 
  @if(Auth::user()->can('employee.delete'))
-{{-- <a href="{{ route('delete.employee',$item->id) }}" class="btn btn-danger rounded-pill waves-effect waves-light" id="delete">Delete</a> --}}
+<a href="{{ route('delete.employee',$item->id) }}" class="btn btn-danger rounded-pill waves-effect waves-light" id="delete">Delete</a>
 @endif
                 </td>
             </tr>
