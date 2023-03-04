@@ -80,7 +80,32 @@
                                 </div>
                             </li>
 
-                           
+                            <li>
+                                <a href="#sidebarEcommercee" data-bs-toggle="collapse">
+                                    <i class="mdi mdi-cart-outline"></i>
+                                    <span>Manage Salary </span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <div class="collapse" id="sidebarEcommercee">
+                                    <ul class="nav-second-level">
+                                        <li>
+                                            <a href="{{ route('add.advance.salary') }}">Add Advance Salary</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('all.advance.salary') }}">All Advance Salary</a>
+                                        </li>
+                    
+                                         {{-- <li>
+                                            <a href="{{ route('pay.salary') }}">Pay Salary</a>
+                                        </li> 
+                    
+                                        <li>
+                                            <a href="{{ route('month.salary') }}">Last Month Salary</a>
+                                        </li> --}}
+                                        
+                                    </ul>
+                                </div>
+                            </li>
                             <li>
                                 <a href="#sidebarProjects" data-bs-toggle="collapse">
                                     <i class="mdi mdi-briefcase-check-outline"></i>

@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\EmployeeController;
 use App\Http\Controllers\Backend\CustomerController;
 use App\Http\Controllers\Backend\SupplierController;
+use App\Http\Controllers\Backend\SalaryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -75,4 +76,16 @@ Route::controller(CustomerController::class)->group(function(){
         Route::get('/delete/supplier/{id}','DeleteSupplier')->name('delete.supplier');
         Route::get('/details/supplier/{id}','DetailsSupplier')->name('details.supplier');
         });
+
+        /// Advance Salary All Route 
+    Route::controller(SalaryController::class)->group(function(){
+
+        Route::get('/add/advance/salary','AddAdvanceSalary')->name('add.advance.salary');
+        Route::post('/advance/salary/store','AdvanceSalaryStore')->name('advance.salary.store');
+        Route::get('/all/advance/salary','AllAdvanceSalary')->name('all.advance.salary');     
+        Route::get('/edit/advance/salary/{id}','EditAdvanceSalary')->name('edit.advance.salary');
+        Route::post('/advance/salary/update','AdvanceSalaryUpdate')->name('advance.salary.update'); 
+    
+    });
+    
 });  
