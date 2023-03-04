@@ -49,39 +49,174 @@
                                     <span>Manage Customer </span>
                                     <span class="menu-arrow"></span>
                                 </a>
-        <div class="collapse" id="sidebarCrm">
-            <ul class="nav-second-level">
-                <li>
-                    <a href="{{route('all.customer')}}">All Customers</a>
-                </li>
-                <li>
-                    <a href="{{route('add.customer')}}">Add Customer</a>
-                </li>
-                
-            </ul>
-        </div>
+                                    <div class="collapse" id="sidebarCrm">
+                                        <ul class="nav-second-level">
+                                            <li>
+                                                <a href=" public function AddCustomer(){
+                                                    return view('backend.customer.add_customer');
+                                               } // End Method 
+                                           
+                                           
+                                                public function StoreCustomer(Request $request){
+                                           
+                                                   $validateData = $request->validate([
+                                                       'name' => 'required|max:200',
+                                                       'email' => 'required|unique:customers|max:200',
+                                                       'phone' => 'required|max:200',
+                                                       'address' => 'required|max:400',
+                                                       'shopname' => 'required|max:200',
+                                                       'account_holder' => 'required|max:200', 
+                                                       'account_number' => 'required', 
+                                                       'image' => 'required',  
+                                                   ]);
+                                            
+                                                   $image = $request->file('image');
+                                                   $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+                                                   Image::make($image)->resize(300,300)->save('upload/customer/'.$name_gen);
+                                                   $save_url = 'upload/customer/'.$name_gen;
+                                           
+                                                   Customer::insert([
+                                           
+                                                       'name' => $request->name,
+                                                       'email' => $request->email,
+                                                       'phone' => $request->phone,
+                                                       'address' => $request->address,
+                                                       'shopname' => $request->shopname,
+                                                       'account_holder' => $request->account_holder,
+                                                       'account_number' => $request->account_number,
+                                                       'bank_name' => $request->bank_name,
+                                                       'bank_branch' => $request->bank_branch,
+                                                       'city' => $request->city,
+                                                       'image' => $save_url,
+                                                       'created_at' => Carbon::now(), 
+                                           
+                                                   ]);
+                                           
+                                                    $notification = array(
+                                                       'message' => 'Customer Inserted Successfully',
+                                                       'alert-type' => 'success'
+                                                   );
+                                           
+                                                   return redirect()->route('all.customer')->with($notification); 
+                                               } // End Method 
+                                           
+                                           
+                                            public function EditCustomer($id){
+                                           
+                                                   $customer = Customer::findOrFail($id);
+                                                   return view('backend.customer.edit_customer',compact('customer'));
+                                           
+                                               } // End Method 
+                                           
+                                           
+                                                public function UpdateCustomer(Request $request){
+                                           
+                                                   $customer_id = $request->id;
+                                           
+                                                   if ($request->file('image')) {
+                                           
+                                                   $image = $request->file('image');
+                                                   $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+                                                   Image::make($image)->resize(300,300)->save('upload/customer/'.$name_gen);
+                                                   $save_url = 'upload/customer/'.$name_gen;
+                                           
+                                                   Customer::findOrFail($customer_id)->update([
+                                           
+                                                       'name' => $request->name,
+                                                       'email' => $request->email,
+                                                       'phone' => $request->phone,
+                                                       'address' => $request->address,
+                                                       'shopname' => $request->shopname,
+                                                       'account_holder' => $request->account_holder,
+                                                       'account_number' => $request->account_number,
+                                                       'bank_name' => $request->bank_name,
+                                                       'bank_branch' => $request->bank_branch,
+                                                       'city' => $request->city,
+                                                       'image' => $save_url,
+                                                       'created_at' => Carbon::now(), 
+                                           
+                                                   ]);
+                                           
+                                                    $notification = array(
+                                                       'message' => 'Customer Updated Successfully',
+                                                       'alert-type' => 'success'
+                                                   );
+                                           
+                                                   return redirect()->route('all.customer')->with($notification); 
+                                                        
+                                                   } else{
+                                           
+                                                       Customer::findOrFail($customer_id)->update([
+                                           
+                                                       'name' => $request->name,
+                                                       'email' => $request->email,
+                                                       'phone' => $request->phone,
+                                                       'address' => $request->address,
+                                                       'shopname' => $request->shopname,
+                                                       'account_holder' => $request->account_holder,
+                                                       'account_number' => $request->account_number,
+                                                       'bank_name' => $request->bank_name,
+                                                       'bank_branch' => $request->bank_branch,
+                                                       'city' => $request->city, 
+                                                       'created_at' => Carbon::now(), 
+                                           
+                                                   ]);
+                                           
+                                                    $notification = array(
+                                                       'message' => 'Customer Updated Successfully',
+                                                       'alert-type' => 'success'
+                                                   );
+                                           
+                                                   return redirect()->route('all.customer')->with($notification); 
+                                           
+                                                   } // End else Condition  
+                                           
+                                           
+                                               } // End Method 
+                                           
+                                           
+                                            public function DeleteCustomer($id){
+                                           
+                                                   $customer_img = Customer::findOrFail($id);
+                                                   $img = $customer_img->image;
+                                                   unlink($img);
+                                           
+                                                   Customer::findOrFail($id)->delete();
+                                           
+                                                   $notification = array(
+                                                       'message' => 'Customer Deleted Successfully',
+                                                       'alert-type' => 'success'
+                                                   );
+                                           
+                                                   return redirect()->back()->with($notification); 
+                                           
+                                               } // End Method 
+                                           
+                                           
+                                           ">All Customers</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{route('add.customer')}}">Add Customer</a>
+                                            </li>
+                                            
+                                        </ul>
+                                    </div>
                             </li>
 
                             <li>
                                 <a href="#sidebarEmail" data-bs-toggle="collapse">
                                     <i class="mdi mdi-email-multiple-outline"></i>
-                                    <span> Email </span>
+                                    <span> Manage Supplier </span>
                                     <span class="menu-arrow"></span>
                                 </a>
                                 <div class="collapse" id="sidebarEmail">
                                     <ul class="nav-second-level">
                                         <li>
-                                            <a href="email-inbox.html">Inbox</a>
+                                            <a href="{{route('all.supplier')}}">All Suppliers</a>
                                         </li>
                                         <li>
-                                            <a href="email-read.html">Read Email</a>
-                                        </li>
-                                        <li>
-                                            <a href="email-compose.html">Compose Email</a>
-                                        </li>
-                                        <li>
-                                            <a href="email-templates.html">Email Templates</a>
-                                        </li>
+                                            <a href="{{route('add.supplier')}}">Add Supplier</a>
+                                        </li>                                       
                                     </ul>
                                 </div>
                             </li>
