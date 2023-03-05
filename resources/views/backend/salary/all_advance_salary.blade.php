@@ -45,10 +45,10 @@
         	@foreach($salary as $key=> $item)
             <tr>
                 <td>{{ $key+1 }}</td>
-                <td> <img src="{{ asset($item->employee->image) }}" style="width:50px; height: 40px;"> </td>
-                <td>{{ $item['employee']['name'] }}</td>
+                <td> <img src="{{ asset($item->image) }}" style="width:50px; height: 40px;"> </td>
+                <td>{{ $item['name'] }}</td>
                 <td>{{ $item->month }}</td>
-                <td>{{ $item['employee']['salary'] }}</td>
+                <td>{{ $item['salary'] }}</td>
                 <td>
 
                     @if($item->advance_salary == NULL )
@@ -62,6 +62,39 @@
 <a href="{{ route('edit.advance.salary',$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light">Edit</a>
 <a href="{{ route('delete.employee',$item->id) }}" class="btn btn-danger rounded-pill waves-effect waves-light" id="delete">Delete</a>
 
+                </td>
+            </tr>
+            @endforeach
+        </tbody>
+                    </table>
+
+
+                    <table id="basic-datatable" class="table dt-responsive nowrap w-100">
+                        <thead>
+                            <tr>
+                                <th>Sl</th>
+                                <th>Image</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Salary</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                    
+    
+        <tbody>
+        	@foreach($employee as $key=> $item)
+            <tr>
+                <td>{{ $key+1 }}</td>
+                <td> <img src="{{ asset($item->image) }}" style="width:50px; height: 40px;"> </td>
+                <td>{{ $item->name }}</td>
+                <td>{{ $item->email }}</td>
+                <td>{{ $item->phone }}</td>
+                <td>{{ $item->salary }}</td>
+                <td>              
+                <a href="{{route('edit.employee', $item->id)}}" class="btn btn-blue rounded-pill waves-effect waves-light">Edit</a>
+                <a href="{{ route('delete.employee',$item->id) }}" class="btn btn-danger rounded-pill waves-effect waves-light" id="delete">Delete</a>
                 </td>
             </tr>
             @endforeach
