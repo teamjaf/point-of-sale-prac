@@ -48,7 +48,7 @@
                 <td> <img src="{{ asset($item->employee->image) }}" style="width:50px; height: 40px;"> </td>
                 <td>{{ $item->employee->name }}</td>
                 <td>{{ $item->month }}</td>
-                <td>{{ $item['employee']['salary'] }}</td>
+                <td>{{ $item->employee->salary}}</td>
                 <td>
 
                     @if($item->advance_salary == NULL )
