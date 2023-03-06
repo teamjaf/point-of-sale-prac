@@ -42,7 +42,7 @@
 
             <input type="hidden" name="id" value="{{ $paysalary->id }}">
 
-            <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Paid Salary </h5>
+            <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Pay Now </h5>
 
             <div class="row">
 
