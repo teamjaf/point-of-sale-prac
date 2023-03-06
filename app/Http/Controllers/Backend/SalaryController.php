@@ -66,7 +66,8 @@ class SalaryController extends Controller
     public function AllAdvanceSalary(){
         
         $employee = Employee::latest()->get();
-        $salary = AdvanceSalary::latest()->get();
+        $salary = AdvanceSalary::with('employee')->get();
+        
         return view('backend.salary.all_advance_salary',compact('salary','employee'));
 
     }// End Method 
