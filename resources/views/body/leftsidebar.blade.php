@@ -99,9 +99,9 @@
                                             <a href="{{ route('pay.salary') }}">Pay Salary</a>
                                         </li> 
                     
-                                        {{-- <li>
+                                       <li>
                                             <a href="{{ route('month.salary') }}">Last Month Salary</a>
-                                        </li> --}}
+                                        </li>
                                         
                                     </ul>
                                 </div>

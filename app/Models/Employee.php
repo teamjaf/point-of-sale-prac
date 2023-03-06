@@ -11,7 +11,6 @@ class Employee extends Model
     protected $guarded = [];
 
       public function advance(){
-        return $this->belongTo('App\Models\AdvanceSalary');
+        return $this->belongsTo(AdvanceSalary::class,'id','employee_id');
     }
 }
- 
