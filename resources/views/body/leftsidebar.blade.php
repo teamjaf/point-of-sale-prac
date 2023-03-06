@@ -100,31 +100,21 @@
                     
                                        <li>
                                             <a href="{{ route('month.salary') }}">Last Month Salary</a>
-                                        </li>
-                                        
-                    
-                                        
-                                        
+                                        </li>                                        
                                     </ul>
                                 </div>
                             </li>
                             <li>
                                 <a href="#sidebarProjects" data-bs-toggle="collapse">
                                     <i class="mdi mdi-briefcase-check-outline"></i>
-                                    <span> Projects </span>
+                                    <span> Emplyee Attendance </span>
                                     <span class="menu-arrow"></span>
                                 </a>
                                 <div class="collapse" id="sidebarProjects">
                                     <ul class="nav-second-level">
                                         <li>
-                                            <a href="project-list.html">List</a>
-                                        </li>
-                                        <li>
-                                            <a href="project-detail.html">Detail</a>
-                                        </li>
-                                        <li>
-                                            <a href="project-create.html">Create Project</a>
-                                        </li>
+                                            <a href="{{route('employee.attend.list')}}">Employee Attendance</a>
+                                        </li>                                    
                                     </ul>
                                 </div>
                             </li>
