@@ -1,11 +1,11 @@
-      
+
 <!-- ========== Left Sidebar Start ========== -->
             <div class="left-side-menu">
 
                 <div class="h-100" data-simplebar>
 
                     <!-- User box -->
-                   
+
 
                     <!--- Sidemenu -->
                     <div id="sidebar-menu">
@@ -19,7 +19,7 @@
                                     <span> Dashboard </span>
                                 </a>
                             </li>
-                
+
 
                             <li class="menu-title mt-2">Apps</li>
 
@@ -38,7 +38,7 @@
                                         <li>
                                             <a href="{{route('add.employee')}}">Add Employee</a>
                                         </li>
-                                       
+
                                     </ul>
                                 </div>
                             </li>
@@ -57,7 +57,7 @@
                                             <li>
                                                 <a href="{{route('add.customer')}}">Add Customer</a>
                                             </li>
-                                            
+
                                         </ul>
                                     </div>
                             </li>
@@ -75,7 +75,7 @@
                                         </li>
                                         <li>
                                             <a href="{{route('add.supplier')}}">Add Supplier</a>
-                                        </li>                                       
+                                        </li>
                                     </ul>
                                 </div>
                             </li>
@@ -96,11 +96,11 @@
                                         </li>
                                         <li>
                                             <a href="{{ route('pay.salary') }}">Total Salary Status</a>
-                                        </li> 
-                    
+                                        </li>
+
                                        <li>
                                             <a href="{{ route('month.salary') }}">Last Month Salary</a>
-                                        </li>                                        
+                                        </li>
                                     </ul>
                                 </div>
                             </li>
@@ -114,7 +114,7 @@
                                     <ul class="nav-second-level">
                                         <li>
                                             <a href="{{route('employee.attend.list')}}">Employee Attendance</a>
-                                        </li>                                    
+                                        </li>
                                     </ul>
                                 </div>
                             </li>
@@ -129,40 +129,30 @@
                                     <ul class="nav-second-level">
                                         <li>
                                             <a href="{{route('all.category')}}">All Category</a>
-                                        </li>                                    
+                                        </li>
                                     </ul>
                                 </div>
                             </li>
 
                             <li>
-                                <a href="#Products" data-bs-toggle="collapse">
-                                    <i class="mdi mdi-briefcase-check-outline"></i>
-                                    <span> Products </span>
+                                <a href="#product" data-bs-toggle="collapse">
+                                    <i class="mdi mdi-email-multiple-outline"></i>
+                                    <span> Products  </span>
                                     <span class="menu-arrow"></span>
                                 </a>
-                                <div class="collapse" id="Products">
+                                <div class="collapse" id="product">
                                     <ul class="nav-second-level">
                                         <li>
-                                            <a href="#product" data-bs-toggle="collapse">
-                                                <i class="mdi mdi-email-multiple-outline"></i>
-                                                <span> Products  </span>
-                                                <span class="menu-arrow"></span>
-                                            </a>
-                                            <div class="collapse" id="product">
-                                                <ul class="nav-second-level">
-                                                    <li>
-                                                        <a href="{{ route('all.product') }}">All Product </a>
-                                                    </li>
-                                
-                                                     {{-- <li>
-                                                        <a href="{{ route('add.product') }}">Add Product </a>
-                                                    </li>
-                                                     <li>
-                                                        <a href="{{ route('import.product') }}">Import Product </a>
-                                                    </li>                                                 --}}
-                                                </ul>
-                                            </div>
-                                        </li>                                 
+                                            <a href="{{ route('all.product') }}">All Product </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="{{ route('add.product') }}">Add Product </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('import.product') }}">Import Product </a>
+                                        </li>
+
                                     </ul>
                                 </div>
                             </li>

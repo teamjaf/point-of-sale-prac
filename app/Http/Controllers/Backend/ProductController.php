@@ -169,31 +169,31 @@ class ProductController extends Controller
     }// End Method 
 
 
-    // public function ImportProduct(){
+    public function ImportProduct(){
 
-    //     return view('backend.product.import_product');
+        return view('backend.product.import_product');
 
-    // }// End Method 
-
-
-    // public function Export(){
-
-    //     return Excel::download(new ProductExport,'products.xlsx');
-
-    // }// End Method 
+    }// End Method 
 
 
-    // public function Import(Request $request){
+    public function Export(){
 
-    //     Excel::import(new ProductImport, $request->file('import_file'));
+        return Excel::download(new ProductExport,'products.xlsx');
 
-    //      $notification = array(
-    //         'message' => 'Product Imported Successfully',
-    //         'alert-type' => 'success'
-    //     );
+    }// End Method 
 
-    //     return redirect()->back()->with($notification); 
-    // }// End Method 
+
+    public function Import(Request $request){
+
+        Excel::import(new ProductImport, $request->file('import_file'));
+
+         $notification = array(
+            'message' => 'Product Imported Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification); 
+    }// End Method 
 
 
 }
