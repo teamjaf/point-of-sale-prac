@@ -134,6 +134,24 @@
                                 </div>
                             </li>
 
+                            <li>
+                                <a href="#Products" data-bs-toggle="collapse">
+                                    <i class="mdi mdi-briefcase-check-outline"></i>
+                                    <span> Products </span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <div class="collapse" id="Products">
+                                    <ul class="nav-second-level">
+                                        <li>
+                                            <a href="{{route('all.product')}}">Add Product</a>
+                                        </li>    
+                                        <li>
+                                            <a href="{{route('all.product')}}">All Products</a>
+                                        </li>                                  
+                                    </ul>
+                                </div>
+                            </li>
+
                             <li class="menu-title mt-2">Custom</li>
 
                             <li>
