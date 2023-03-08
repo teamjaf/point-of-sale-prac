@@ -352,7 +352,7 @@
       }
 
       .switch-candy a {
-            border: 1px solid #333;
+            border: 1px solid rgb(245, 245, 245);
             border-radius: 3px;
             box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.45);
             background-color: #cbe1e7;
