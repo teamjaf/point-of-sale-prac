@@ -20,6 +20,14 @@
                                 </a>
                             </li>
 
+                            <li>
+                                <a href="{{ route('pos') }}">
+                                    <span class="badge bg-pink float-end">Hot</span>
+                                   <i class="mdi mdi-view-dashboard-outline"></i>
+                                    <span> POS </span>
+                                </a>
+                            </li>
+
 
                             <li class="menu-title mt-2">Human Resource</li>
 
@@ -186,7 +194,7 @@
                                     </ul>
                                 </div>
                             </li>
-                            
+
                             <li class="menu-title mt-2">Custom</li>
 
                            
