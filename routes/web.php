@@ -62,15 +62,15 @@ Route::controller(EmployeeController::class)->group(function(){
 
 
     // Customer All Routes
-Route::controller(CustomerController::class)->group(function(){
+    Route::controller(CustomerController::class)->group(function(){
 
-    Route::get('/all/customer','AllCustomer')->name('all.customer');
-    Route::get('/add/customer','AddCustomer')->name('add.customer');
-    Route::post('/store/customer','StoreCustomer')->name('customer.store');
-    Route::get('/edit/customer/{id}','EditEmployee')->name('edit.customer');
-    Route::post('/update/customer','UpdateCustomer')->name('customer.update');
-    Route::get('/delete/customer/{id}','DeleteCustomer')->name('delete.customer');
-    });
+        Route::get('/all/customer','AllCustomer')->name('all.customer');
+        Route::get('/add/customer','AddCustomer')->name('add.customer');
+        Route::post('/store/customer','StoreCustomer')->name('customer.store');
+        Route::get('/edit/customer/{id}','EditCustomer')->name('edit.customer');
+        Route::post('/update/customer','UpdateCustomer')->name('customer.update');
+        Route::get('/delete/customer/{id}','DeleteCustomer')->name('delete.customer');
+        });
 
             /// Supplier All Route 
     Route::controller(SupplierController::class)->group(function(){
@@ -147,11 +147,16 @@ Route::controller(CustomerController::class)->group(function(){
 
 
          /// Expense All Route 
-      Route::controller(ExpenseController::class)->group(function(){
-        Route::get('/add/expense','AddExpense')->name('add.expense');
-        Route::post('/store/expense','StoreExpense')->name('expense.store');
-        Route::get('/today/expense','TodayExpense')->name('today.expense');
+         Route::controller(ExpenseController::class)->group(function(){
 
-
-        });
+            Route::get('/add/expense','AddExpense')->name('add.expense');
+            Route::post('/store/expense','StoreExpense')->name('expense.store');
+            Route::get('/today/expense','TodayExpense')->name('today.expense');
+            Route::get('/edit/expense/{id}','EditExpense')->name('edit.expense');
+            Route::post('/update/expense','UpdateExpense')->name('expense.update');
+            Route::get('/month/expense','MonthExpense')->name('month.expense');
+            Route::get('/year/expense','YearExpense')->name('year.expense');
+           
+           });
+   
 });  
