@@ -10,6 +10,7 @@ use App\Http\Controllers\Backend\SalaryController;
 use App\Http\Controllers\Backend\AttendenceController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\ProductController;
+use App\Http\Controllers\Backend\ExpenseController;
 
 
 
@@ -141,9 +142,14 @@ Route::controller(CustomerController::class)->group(function(){
         
         Route::get('/import/product','ImportProduct')->name('import.product');
         Route::get('/export','Export')->name('export');
-        Route::post('/import','Import')->name('import');
-        
+        Route::post('/import','Import')->name('import');     
+        });
 
-        
+
+         /// Expense All Route 
+      Route::controller(ExpenseController::class)->group(function(){
+        Route::get('/add/expense','AddExpense')->name('add.expense');
+        Route::post('/store/expense','StoreExpense')->name('expense.store');
+ 
         });
 });  

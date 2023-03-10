@@ -162,53 +162,24 @@
                             <li>
                                 <a href="#sidebarAuth" data-bs-toggle="collapse">
                                     <i class="mdi mdi-account-circle-outline"></i>
-                                    <span> Auth Pages </span>
+                                    <span> Expense </span>
                                     <span class="menu-arrow"></span>
                                 </a>
                                 <div class="collapse" id="sidebarAuth">
                                     <ul class="nav-second-level">
                                         <li>
-                                            <a href="auth-login.html">Log In</a>
+                                            <a href="{{ route('add.expense') }}">Add Expense</a>
                                         </li>
                                         <li>
-                                            <a href="auth-login-2.html">Log In 2</a>
+                                            <a href="auth-login-2.html">Today Expense</a>
                                         </li>
                                         <li>
-                                            <a href="auth-register.html">Register</a>
+                                            <a href="auth-login-2.html">Monthly Expense</a>
                                         </li>
                                         <li>
-                                            <a href="auth-register-2.html">Register 2</a>
+                                            <a href="auth-login-2.html">Yearly Expense</a>
                                         </li>
-                                        <li>
-                                            <a href="auth-signin-signup.html">Signin - Signup</a>
-                                        </li>
-                                        <li>
-                                            <a href="auth-signin-signup-2.html">Signin - Signup 2</a>
-                                        </li>
-                                        <li>
-                                            <a href="auth-recoverpw.html">Recover Password</a>
-                                        </li>
-                                        <li>
-                                            <a href="auth-recoverpw-2.html">Recover Password 2</a>
-                                        </li>
-                                        <li>
-                                            <a href="auth-lock-screen.html">Lock Screen</a>
-                                        </li>
-                                        <li>
-                                            <a href="auth-lock-screen-2.html">Lock Screen 2</a>
-                                        </li>
-                                        <li>
-                                            <a href="auth-logout.html">Logout</a>
-                                        </li>
-                                        <li>
-                                            <a href="auth-logout-2.html">Logout 2</a>
-                                        </li>
-                                        <li>
-                                            <a href="auth-confirm-mail.html">Confirm Mail</a>
-                                        </li>
-                                        <li>
-                                            <a href="auth-confirm-mail-2.html">Confirm Mail 2</a>
-                                        </li>
+                            
                                     </ul>
                                 </div>
                             </li>
