@@ -21,7 +21,7 @@
                             </li>
 
 
-                            <li class="menu-title mt-2">Apps</li>
+                            <li class="menu-title mt-2">Human Resource</li>
 
 
                             <li>
@@ -79,6 +79,32 @@
                                     </ul>
                                 </div>
                             </li>
+                            <li class="menu-title mt-2">Financial Resource</li>
+                            
+
+                            <li>
+                                <a href="#sidebarAuth" data-bs-toggle="collapse">
+                                    <i class="mdi mdi-account-circle-outline"></i>
+                                    <span> Expense </span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <div class="collapse" id="sidebarAuth">
+                                    <ul class="nav-second-level">
+                                        <li>
+                                            <a href="{{ route('add.expense') }}">Add Expense</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('today.expense') }}">Today Expense</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('month.expense') }}">Monthly Expense</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('year.expense') }}">Yearly Expense</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
 
                             <li>
                                 <a href="#sidebarEcommercee" data-bs-toggle="collapse">
@@ -104,6 +130,7 @@
                                     </ul>
                                 </div>
                             </li>
+
                             <li>
                                 <a href="#sidebarProjects" data-bs-toggle="collapse">
                                     <i class="mdi mdi-briefcase-check-outline"></i>
@@ -118,21 +145,9 @@
                                     </ul>
                                 </div>
                             </li>
+                            <li class="menu-title mt-2">Product Management</li>
 
-                            <li>
-                                <a href="#category" data-bs-toggle="collapse">
-                                    <i class="mdi mdi-briefcase-check-outline"></i>
-                                    <span> Category </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <div class="collapse" id="category">
-                                    <ul class="nav-second-level">
-                                        <li>
-                                            <a href="{{route('all.category')}}">All Category</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
+                           
 
                             <li>
                                 <a href="#product" data-bs-toggle="collapse">
@@ -157,31 +172,24 @@
                                 </div>
                             </li>
 
-                            <li class="menu-title mt-2">Custom</li>
-
                             <li>
-                                <a href="#sidebarAuth" data-bs-toggle="collapse">
-                                    <i class="mdi mdi-account-circle-outline"></i>
-                                    <span> Expense </span>
+                                <a href="#category" data-bs-toggle="collapse">
+                                    <i class="mdi mdi-briefcase-check-outline"></i>
+                                    <span> Category </span>
                                     <span class="menu-arrow"></span>
                                 </a>
-                                <div class="collapse" id="sidebarAuth">
+                                <div class="collapse" id="category">
                                     <ul class="nav-second-level">
                                         <li>
-                                            <a href="{{ route('add.expense') }}">Add Expense</a>
-                                        </li>
-                                        <li>
-                                            <a href="{{ route('today.expense') }}">Today Expense</a>
-                                        </li>
-                                        <li>
-                                            <a href="{{ route('month.expense') }}">Monthly Expense</a>
-                                        </li>
-                                        <li>
-                                            <a href="{{ route('year.expense') }}">Yearly Expense</a>
+                                            <a href="{{route('all.category')}}">All Category</a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
+                            
+                            <li class="menu-title mt-2">Custom</li>
+
+                           
 
                             <li>
                                 <a href="#sidebarExpages" data-bs-toggle="collapse">
