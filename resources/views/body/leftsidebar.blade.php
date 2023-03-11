@@ -88,7 +88,7 @@
                                 </div>
                             </li>
                             <li class="menu-title mt-2">Financial Resource</li>
-                            
+
 
                             <li>
                                 <a href="#sidebarAuth" data-bs-toggle="collapse">
@@ -155,7 +155,7 @@
                             </li>
                             <li class="menu-title mt-2">Product Management</li>
 
-                           
+
 
                             <li>
                                 <a href="#product" data-bs-toggle="collapse">
@@ -197,61 +197,31 @@
 
                             <li class="menu-title mt-2">Custom</li>
 
-                           
+
 
                             <li>
-                                <a href="#sidebarExpages" data-bs-toggle="collapse">
-                                    <i class="mdi mdi-text-box-multiple-outline"></i>
-                                    <span> Extra Pages </span>
+                                <a href="#orders" data-bs-toggle="collapse">
+                                    <i class="mdi mdi-email-multiple-outline"></i>
+                                    <span> Orders  </span>
                                     <span class="menu-arrow"></span>
                                 </a>
-                                <div class="collapse" id="sidebarExpages">
+                                <div class="collapse" id="orders">
                                     <ul class="nav-second-level">
                                         <li>
-                                            <a href="pages-starter.html">Starter</a>
+                                            <a href="{{ route('pending.order') }}">Pending Orders </a>
                                         </li>
+
                                         <li>
-                                            <a href="pages-timeline.html">Timeline</a>
+                                            <a href="{{ route('complete.order') }}">Complete Orders </a>
                                         </li>
+
                                         <li>
-                                            <a href="pages-sitemap.html">Sitemap</a>
+                                            <a href="{{ route('pending.due') }}">Pending Due </a>
                                         </li>
-                                        <li>
-                                            <a href="pages-invoice.html">Invoice</a>
-                                        </li>
-                                        <li>
-                                            <a href="pages-faqs.html">FAQs</a>
-                                        </li>
-                                        <li>
-                                            <a href="pages-search-results.html">Search Results</a>
-                                        </li>
-                                        <li>
-                                            <a href="pages-pricing.html">Pricing</a>
-                                        </li>
-                                        <li>
-                                            <a href="pages-maintenance.html">Maintenance</a>
-                                        </li>
-                                        <li>
-                                            <a href="pages-coming-soon.html">Coming Soon</a>
-                                        </li>
-                                        <li>
-                                            <a href="pages-gallery.html">Gallery</a>
-                                        </li>
-                                        <li>
-                                            <a href="pages-404.html">Error 404</a>
-                                        </li>
-                                        <li>
-                                            <a href="pages-404-two.html">Error 404 Two</a>
-                                        </li>
-                                        <li>
-                                            <a href="pages-404-alt.html">Error 404-alt</a>
-                                        </li>
-                                        <li>
-                                            <a href="pages-500.html">Error 500</a>
-                                        </li>
-                                        <li>
-                                            <a href="pages-500-two.html">Error 500 Two</a>
-                                        </li>
+
+                                    </ul>
+                                </div>
+                            </li>
                                     </ul>
                                 </div>
                             </li>

@@ -12,6 +12,7 @@ use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\ExpenseController;
 use App\Http\Controllers\Backend\PosController;
+use App\Http\Controllers\Backend\OrderController;
 
 
 
@@ -173,5 +174,26 @@ Route::controller(EmployeeController::class)->group(function(){
 
         Route::post('/create-invoice','CreateInvoice');
     });
+
+
+    Route::controller(OrderController::class)->group(function(){
+
+        Route::post('/final-invoice','FinalInvoice');
+        Route::get('/pending/order','PendingOrder')->name('pending.order');
+        Route::get('/order/details/{order_id}','OrderDetails')->name('order.details');
+        Route::post('/order/status/update','OrderStatusUpdate')->name('order.status.update');
+
+        Route::get('/complete/order','CompleteOrder')->name('complete.order');
+
+        Route::get('/stock','StockManage')->name('stock.manage');
+        Route::get('/order/invoice-download/{order_id}','OrderInvoice');
+
+        //// Due All Route
+
+        Route::get('/pending/due','PendingDue')->name('pending.due');
+        Route::get('/order/due/{id}','OrderDueAjax');
+        Route::post('/update/due','UpdateDue')->name('update.due');
+    });
+
 
 });
