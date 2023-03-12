@@ -19,8 +19,8 @@ class OrderController extends Controller
 
     public function FinalInvoice(Request $request){
 
-        $rtotal = $request->total;
-        $rpay = $request->pay;
+        $rtotal = intval($request->total);
+        $rpay = intval($request->pay);
         $mtotal = $rtotal - $rpay;
 
         $data = array();
@@ -31,11 +31,11 @@ class OrderController extends Controller
         $data['sub_total'] = $request->sub_total;
         $data['vat'] = $request->vat;
 
-        $data['invoice_no'] = 'EPOS'.mt_rand(10000000,99999999);
+        $data['invoice_no'] = 'TotalPOS'.mt_rand(10000000,99999999);
         $data['total'] = $request->total;
         $data['payment_status'] = $request->payment_status;
         $data['pay'] = $request->pay;
-        $data['due'] = $request->due;
+        $data['due'] = $mtotal;
         $data['created_at'] = Carbon::now();
 
         $order_id = Order::insertGetId($data);

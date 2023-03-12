@@ -30,7 +30,7 @@
                             <table id="basic-datatable" class="table dt-responsive nowrap w-100">
                                 <thead>
                                 <tr>
-                                    <th>Serial</th>
+                                    <th>Sl</th>
                                     <th>Image</th>
                                     <th>Name</th>
                                     <th>Order Date</th>

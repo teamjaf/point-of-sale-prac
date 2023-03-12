@@ -10,9 +10,11 @@ use App\Http\Controllers\Backend\SalaryController;
 use App\Http\Controllers\Backend\AttendenceController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\ProductController;
-use App\Http\Controllers\Backend\ExpenseController;
 use App\Http\Controllers\Backend\PosController;
+use App\Http\Controllers\Backend\ExpenseController;
 use App\Http\Controllers\Backend\OrderController;
+
+
 
 
 
@@ -147,9 +149,40 @@ Route::controller(EmployeeController::class)->group(function(){
         Route::post('/import','Import')->name('import');
         });
 
+    Route::controller(ProductController::class)->group(function(){
 
-        /// Expense All Route
-        Route::controller(ExpenseController::class)->group(function(){
+        Route::get('/all/product','AllProduct')->name('all.product');
+        Route::get('/add/product','AddProduct')->name('add.product');
+        Route::post('/store/product','StoreProduct')->name('product.store');
+        Route::get('/edit/product/{id}','EditProduct')->name('edit.product');
+        Route::post('/update/product','UdateProduct')->name('product.update');
+        Route::get('/delete/product/{id}','DeleteProduct')->name('delete.product');
+
+        Route::get('/barcode/product/{id}','BarcodeProduct')->name('barcode.product');
+
+        Route::get('/import/product','ImportProduct')->name('import.product');
+        Route::get('/export','Export')->name('export');
+        Route::post('/import','Import')->name('import');
+
+
+    });
+
+    ///Pos All Route
+    Route::controller(PosController::class)->group(function(){
+
+        Route::get('/pos','Pos')->name('pos');
+        Route::post('/add-cart','AddCart');
+        Route::get('/allitem','AllItem');
+        Route::post('/cart-update/{rowId}','CartUpdate');
+        Route::get('/cart-remove/{rowId}','CartRemove');
+
+        Route::post('/create-invoice','CreateInvoice');
+
+
+    });
+
+    ///Expense All Route
+    Route::controller(ExpenseController::class)->group(function(){
 
         Route::get('/add/expense','AddExpense')->name('add.expense');
         Route::post('/store/expense','StoreExpense')->name('expense.store');
@@ -159,23 +192,10 @@ Route::controller(EmployeeController::class)->group(function(){
         Route::get('/month/expense','MonthExpense')->name('month.expense');
         Route::get('/year/expense','YearExpense')->name('year.expense');
 
-        });
-
-
-            ///Expense All Route
-        Route::controller(PosController::class)->group(function(){
-
-        Route::get('/pos','Pos')->name('pos');
-        Route::post('/add-cart','AddCart');
-        Route::get('/allitem','AllItem');
-        Route::post('/cart-update/{rowId}','CartUpdate');
-        Route::get('/cart-remove/{rowId}','CartRemove');
-
-
-        Route::post('/create-invoice','CreateInvoice');
     });
 
 
+    ///Order All Route
     Route::controller(OrderController::class)->group(function(){
 
         Route::post('/final-invoice','FinalInvoice');
@@ -194,6 +214,8 @@ Route::controller(EmployeeController::class)->group(function(){
         Route::get('/order/due/{id}','OrderDueAjax');
         Route::post('/update/due','UpdateDue')->name('update.due');
     });
+
+
 
 
 });

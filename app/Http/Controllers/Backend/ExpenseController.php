@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Expense; 
+use App\Models\Expense;
 use Carbon\Carbon;
 
 class ExpenseController extends Controller
@@ -13,7 +13,7 @@ class ExpenseController extends Controller
 
         return view('backend.expense.add_expense');
 
-    } // End Method 
+    } // End Method
 
 
     public function StoreExpense(Request $request){
@@ -25,18 +25,18 @@ class ExpenseController extends Controller
             'month' => $request->month,
             'year' => $request->year,
             'date' => $request->date,
-            'created_at' => Carbon::now(), 
+            'created_at' => Carbon::now(),
         ]);
 
 
-            $notification = array(
+        $notification = array(
             'message' => 'Expense Inserted Successfully',
             'alert-type' => 'success'
         );
 
-        return redirect()->back()->with($notification); 
+        return redirect()->back()->with($notification);
 
-    } // End Method 
+    } // End Method
 
 
 
@@ -46,7 +46,7 @@ class ExpenseController extends Controller
         $today = Expense::where('date',$date)->get();
         return view('backend.expense.today_expense',compact('today'));
 
-    } // End Method 
+    } // End Method
 
 
     public function EditExpense($id){
@@ -54,7 +54,7 @@ class ExpenseController extends Controller
         $expense = Expense::findOrFail($id);
         return view('backend.expense.edit_expense',compact('expense'));
 
-    }// End Method 
+    }// End Method
 
 
     public function UpdateExpense(Request $request){
@@ -68,18 +68,18 @@ class ExpenseController extends Controller
             'month' => $request->month,
             'year' => $request->year,
             'date' => $request->date,
-            'created_at' => Carbon::now(), 
+            'created_at' => Carbon::now(),
         ]);
 
 
-            $notification = array(
+        $notification = array(
             'message' => 'Expense Updated Successfully',
             'alert-type' => 'success'
         );
 
-        return redirect()->route('today.expense')->with($notification); 
+        return redirect()->route('today.expense')->with($notification);
 
-    }// End Method 
+    }// End Method
 
 
     public function MonthExpense(){
@@ -93,7 +93,7 @@ class ExpenseController extends Controller
 
     public function YearExpense(){
 
-         $year = date("Y");
+        $year = date("Y");
         $yearexpense = Expense::where('year',$year)->get();
         return view('backend.expense.year_expense',compact('yearexpense'));
 
