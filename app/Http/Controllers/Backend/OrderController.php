@@ -19,9 +19,9 @@ class OrderController extends Controller
 
     public function FinalInvoice(Request $request){
 
-        $rtotal = $request->total;
-        $rpay = $request->pay;
-        $mtotal = $rtotal - $rpay;
+//        $rtotal = $request->total;
+//        $rpay = $request->pay;
+//        $mtotal = $rtotal - $rpay;
 
         $data = array();
         $data['customer_id'] = $request->customer_id;
@@ -35,7 +35,7 @@ class OrderController extends Controller
         $data['total'] = $request->total;
         $data['payment_status'] = $request->payment_status;
         $data['pay'] = $request->pay;
-        $data['due'] = $mtotal;
+        $data['due'] = $request->due;
         $data['created_at'] = Carbon::now();
 
         $order_id = Order::insertGetId($data);
@@ -97,10 +97,10 @@ class OrderController extends Controller
 
 
         $product = Orderdetails::where('order_id',$order_id)->get();
-//        foreach($product as $item){
-//            Product::where('id',$item->product_id)
-//                ->update(['product_store' => DB::raw('product_store-'.$item->quantity) ]);
-//        }
+        foreach($product as $item){
+            Product::where('id',$item->product_id)
+                ->update(['product_store' => DB::raw('product_store-'.$item->quantity) ]);
+        }
 
         Order::findOrFail($order_id)->update(['order_status' => 'complete']);
 
