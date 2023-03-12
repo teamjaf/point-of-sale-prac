@@ -19,9 +19,9 @@ class OrderController extends Controller
 
     public function FinalInvoice(Request $request){
 
-//        $rtotal = $request->total;
-//        $rpay = $request->pay;
-//        $mtotal = $rtotal - $rpay;
+        $rtotal = $request->total;
+        $rpay = $request->pay;
+        $mtotal = $rtotal - $rpay;
 
         $data = array();
         $data['customer_id'] = $request->customer_id;

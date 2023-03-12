@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Customer;
-use Cart;
+use Gloudemans\Shoppingcart\Facades\Cart;
 
 
 class PosController extends Controller
@@ -87,7 +87,6 @@ class PosController extends Controller
         return view('backend.invoice.product_invoice',compact('contents','customer'));
 
     } // End Method
-
 
 
 }
