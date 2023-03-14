@@ -130,8 +130,8 @@
                                 </div> <!-- end col -->
                                 <div class="col-sm-6">
                                     <div class="float-end">
-                                        <p><b>Sub-total:</b> <span class="float-end">${{ Cart::subtotal() }}</span></p>
-                                        <p><b>Vat (21%):</b> <span class="float-end"> &nbsp;&nbsp;&nbsp; ${{ Cart::tax() }}</span></p>
+                                        <p><b>Sub total:</b> <span class="float-end">${{ Cart::subtotal() }}</span></p>
+                                        <p><b>Vat (15%):</b> <span class="float-end"> &nbsp;&nbsp;&nbsp; ${{ Cart::tax() }}</span></p>
                                         <h3>${{ Cart::total() }} USD</h3>
                                     </div>
                                     <div class="clearfix"></div>
